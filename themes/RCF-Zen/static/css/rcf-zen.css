@@ -1,0 +1,11 @@
+html{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: auto !important;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1rem;
+    font-size: 14px;
+    max-width: 100%;
+}
