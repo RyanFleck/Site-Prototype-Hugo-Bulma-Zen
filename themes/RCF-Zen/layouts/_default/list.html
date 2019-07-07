@@ -1,19 +1,27 @@
 {{ define "main" }}
 <main>
 
-<h1 class="title">{{ .Title }}</h1>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1">
+                    {{ .Title }}
+                </h1>
+            </div>
+        </div>
+    </section>
 
-{{ if .Content }}
-{{ .Content }}
-{{ end }}
+    {{ if .Content }}
+    {{ .Content }}
+    {{ end }}
 
-<ol reversed>
-{{ range .Pages }}
-<li>
-        <a href="{{.Permalink}}">
-            {{ if .Date }}{{.Date.Format "2006-01-02"}} - {{end}}{{.Title}}</a>
-    </li>
-{{ end }}
-</ol>
+    <ol reversed>
+        {{ range .Pages }}
+        <li>
+            <a href="{{.Permalink}}">
+                {{ if .Date }}{{.Date.Format "2006-01-02"}} - {{end}}{{.Title}}</a>
+        </li>
+        {{ end }}
+    </ol>
 </main>
 {{end}}

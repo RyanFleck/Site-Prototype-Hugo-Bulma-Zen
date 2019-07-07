@@ -1,22 +1,42 @@
 {{ define "main" }}
 <main>
-<h1 class="title">{{ .Title }}</h1>
 
-{{ if not .Date.IsZero }}
-<p><b>{{ .Date.Format "2006-01-02" }}</b></p>
-{{ end }}
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1">
+                    {{ .Title }}
+                </h1>
 
-{{ if .Params.summary }}
-    <p>{{ .Params.summary }}</p>
-{{ end }}
-{{ if .Params.toc }}
-    <h4>Contents</h4>
-    {{ .TableOfContents }}
-{{ end }}
+                {{ if .Params.summary }}
+                <h3 class="subtitle">
+                    {{ if not .Date.IsZero }}
+                    {{ .Date.Format "2006-01-02" }}:
+                    {{ end }}
+                    {{ .Params.summary }}
 
-<article>
-{{ .Content }}
-</article>
+                </h3>
+                {{ end }}
+
+
+                <h3 class="subtitle"></h3>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="content">
+
+        {{ if .Params.toc }}
+        <h4>Contents</h4>
+        {{ .TableOfContents }}
+        {{ end }}
+
+
+        {{ .Content }}
+
+    </section>
 
 </main>
 {{end}}
